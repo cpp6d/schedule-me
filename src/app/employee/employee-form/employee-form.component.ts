@@ -33,10 +33,10 @@ export class EmployeeFormComponent {
 
   makeAppointment(employeeServiceService:EmployeeServiceService){
     let end = moment(this.start)
-    this.person.startTime = end
+    this.person.startTime = end.format()
     end.add(this.person.description[0].value,'m')
     this.person.description = this.person.description[0].label
-    this.person.endTime = end
+    this.person.endTime = end.format()
     console.log('person end',this.person)
     this.employeeServiceService.makeAppointment(this.person)
     .then(
