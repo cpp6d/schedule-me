@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import 'rxjs/Rx'
 import 'rxjs/add/operator/map';
-import { Subject } from 'rxjs/Rx'
+import { Subject, BehaviorSubject} from 'rxjs/Rx'
 // import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/observable/forkJoin';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EmployeeServiceService {
   companyId: number
-  subject: Subject<number> = new Subject<number>()
+  subject: BehaviorSubject<number> = new BehaviorSubject<number>(this.companyId)
   nameSubject: Subject<any> = new Subject<any>()
   companyName: any
   constructor(private http: Http) { }

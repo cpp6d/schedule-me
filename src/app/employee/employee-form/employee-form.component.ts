@@ -55,13 +55,11 @@ export class EmployeeFormComponent implements OnInit, OnDestroy {
           this.employeeServiceService.getEmployees(this.companyId)
             .subscribe(
               employee => {
-                console.log('getting employees', employee)
                 this.employees = employee.json()[0].users
               }
             )
           this.companyService.getOptions(this.companyId)
             .subscribe(options => {
-              console.log('getting options', options)
               this.services = options
             })
           }
@@ -169,7 +167,6 @@ export class EmployeeFormComponent implements OnInit, OnDestroy {
         //   this.person.customerId = key
         //   this.person.companyId =this.user[key][0]
         // }
-
         this.employees = [];
   }
 
